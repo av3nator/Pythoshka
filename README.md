@@ -1,1 +1,1 @@
-# Pythoshka_bot
+# Pythoshka bot

@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mybot:
+    image: avenator/pytoshka
+    labels:
+      - "com.centurylinklabs.watchtower.scope=myscope"
+    environment:
+      TELEGRAM_BOT_TOKEN: "5047915180:AAFhtgPOo0MDzF-KVpQG5D7B-XPfH3TlAAI"
+
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 10 --scope myscope
+    labels:
+      - "com.centurylinklabs.watchtower.scope=myscope"
